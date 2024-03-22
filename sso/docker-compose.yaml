@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  sso:
+    image: quay.io/keycloak/keycloak:24.0.1
+    container_name: sso_keycloak
+    environment:
+      KEYCLOAK_ADMIN: ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+    ports:
+      - "8080:8080"
+    command: ["start-dev", "-v"]
